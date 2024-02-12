@@ -1,0 +1,27 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          ouath2-client-credentials:
+            provider: keycloak
+            client-id: CogniKids
+            client-secret: SPRQDeGIQSdn0B1CbieAeJTcSV4hooaP
+            authorization-grant-type: password
+        provider:
+          keycloak:
+            issuer-uri: 'http://localhost:8080/realms/CogniKids'
+      resourceserver:
+        jwt:
+          issuer-uri: 'http://localhost:8080/realms/CogniKids/protocol/openid-connect/token'
+          jwk-set-uri: 'http://localhost:8080/realms/CogniKids/protocol/openid-connect/certs'
+  application:
+    name: auth-service
+server:
+  port: 8081
+
+
+
+
+
+
