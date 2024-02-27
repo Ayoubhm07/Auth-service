@@ -1,0 +1,27 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          ouath2-client-credentials:
+            provider: keycloak
+            client-id: CogniCrafters
+            client-secret: lwgSEPxn7qWB8NU9XmlWEBdChUVXOXjT
+            authorization-grant-type: password
+        provider:
+          keycloak:
+            issuer-uri: 'http://localhost:8080/realms/CogniCrafters'
+      resourceserver:
+        jwt:
+          issuer-uri: 'http://localhost:8080/realms/CogniCrafters/protocol/openid-connect/token'
+          jwk-set-uri: 'http://localhost:8080/realms/CogniCrafters/protocol/openid-connect/certs'
+  application:
+    name: auth-service
+server:
+  port: 8081
+
+
+
+
+
+
