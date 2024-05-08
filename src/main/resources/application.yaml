@@ -1,25 +1,42 @@
 spring:
+  application:
+    name: auth-service
   security:
     oauth2:
       client:
         registration:
           ouath2-client-credentials:
             provider: keycloak
-            client-id: CogniKids
-            client-secret: SPRQDeGIQSdn0B1CbieAeJTcSV4hooaP
-            authorization-grant-type: password
+            client-id: CogniCrafters
+            client-secret: ME66az3UxAxX2LKgpDgmJoA2vuVS2mt9
+            authorization-grant-type: client_credentials
         provider:
           keycloak:
-            issuer-uri: 'http://localhost:8080/realms/CogniKids'
+            issuer-uri: 'http://localhost:8080/realms/CogniCrafters'
       resourceserver:
         jwt:
-          issuer-uri: 'http://localhost:8080/realms/CogniKids/protocol/openid-connect/token'
-          jwk-set-uri: 'http://localhost:8080/realms/CogniKids/protocol/openid-connect/certs'
-  application:
-    name: auth-service
+          issuer-uri: 'http://localhost:8080/realms/CogniCrafters/protocol/openid-connect/token'
+          jwk-set-uri: 'http://localhost:8080/realms/CogniCrafters/protocol/openid-connect/certs'
+  datasource:
+    url: jdbc:postgresql://postgres:5432/keycloak
+    username: postgres
+    password: postgres
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+#  kafka:
+#    producer:
+#      bootstrap-servers: localhost:9092
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
 server:
   port: 8081
 
+logging:
+  file:
+    path: C:/Users/HP/Desktop/Autisme/logs/spring.log
 
 
 
