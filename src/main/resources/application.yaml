@@ -36,7 +36,7 @@ server:
 
 logging:
   file:
-    path: C:/Users/HP/Desktop/Autisme/logs/spring.log
+    path: C:/Users/HP/Desktop/Autisme/logs
 
 
 
